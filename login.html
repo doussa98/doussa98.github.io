@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>تسجيل الدخول</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f3c88">
+
     <style>
         body { font-family: Tahoma, sans-serif; background: #eef2f7; display: flex; justify-content: center; align-items: center; height: 100vh; }
         form { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -30,5 +33,31 @@
             }
         }
     </script>
+    <section>
+    <h2>اختبار سريع</h2>
+    <p>أي لغة برمجة نستخدمها لتعليم البرمجة للمبتدئين؟</p>
+    <form onsubmit="return checkQuiz()">
+        <input type="radio" name="q1" value="python"> Python<br>
+        <input type="radio" name="q1" value="html"> HTML<br>
+        <input type="radio" name="q1" value="css"> CSS<br><br>
+        <button type="submit">تحقق</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function checkQuiz() {
+            const options = document.getElementsByName('q1');
+            let answer;
+            for (const opt of options) {
+                if(opt.checked) answer = opt.value;
+            }
+            const result = document.getElementById('result');
+            if(answer === "python") result.textContent = "✅ صحيح!";
+            else result.textContent = "❌ خطأ، حاول مرة أخرى.";
+            return false;
+        }
+    </script>
+</section>
+
 </body>
 </html>
