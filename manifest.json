@@ -1,0 +1,15 @@
+{
+  "name": "موقع الأستاذة فردوس",
+  "short_name": "InfoFerdaousse",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#eef2f7",
+  "theme_color": "#1f3c88",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
